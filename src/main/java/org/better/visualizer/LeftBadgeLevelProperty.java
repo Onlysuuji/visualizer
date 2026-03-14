@@ -1,3 +1,4 @@
+// src/main/java/org/better/visualizer/LeftBadgeLevelProperty.java
 package org.better.visualizer;
 
 import com.mojang.serialization.MapCodec;
@@ -7,7 +8,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-public record   LeftBadgeLevelProperty() implements RangeSelectItemModelProperty {
+public record LeftBadgeLevelProperty() implements RangeSelectItemModelProperty {
     public static final MapCodec<LeftBadgeLevelProperty> MAP_CODEC =
             MapCodec.unit(new LeftBadgeLevelProperty());
 

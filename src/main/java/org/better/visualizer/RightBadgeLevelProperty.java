@@ -1,3 +1,4 @@
+// src/main/java/org/better/visualizer/RightBadgeLevelProperty.java
 package org.better.visualizer;
 
 import com.mojang.serialization.MapCodec;

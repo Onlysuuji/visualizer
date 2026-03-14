@@ -1,28 +1,33 @@
 package org.better.visualizer;
 
-import org.better.visualizer.Visualizer;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.client.renderer.item.properties.numeric.RangeSelectItemModelProperties;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.EventBusSubscriber.Bus;
-import net.neoforged.neoforge.client.event.RegisterRangeSelectItemModelPropertyEvent;
 
-@EventBusSubscriber(modid = Visualizer.MODID, bus = Bus.MOD, value = Dist.CLIENT)
+import java.lang.reflect.Field;
+import java.util.Map;
+
 public final class ClientModelProperties {
-    private ClientModelProperties() {
-    }
+    private ClientModelProperties() {}
 
-    @SubscribeEvent
-    public static void registerRangeProperties(RegisterRangeSelectItemModelPropertyEvent event) {
-        event.register(
-                ResourceLocation.fromNamespaceAndPath(EnchTexMod.MODID, "left_badge_level"),
-                LeftBadgeLevelProperty.MAP_CODEC
-        );
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static void register() {
+        try {
+            Field field = RangeSelectItemModelProperties.class.getDeclaredField("ID_MAPPER");
+            field.setAccessible(true);
 
-        event.register(
-                ResourceLocation.fromNamespaceAndPath(EnchTexMod.MODID, "right_badge_level"),
-                RightBadgeLevelProperty.MAP_CODEC
-        );
+            Map map = (Map) field.get(null);
+
+            map.put(
+                    ResourceLocation.fromNamespaceAndPath(Visualizer.MODID, "left_badge_level"),
+                    LeftBadgeLevelProperty.MAP_CODEC
+            );
+            map.put(
+                    ResourceLocation.fromNamespaceAndPath(Visualizer.MODID, "right_badge_level"),
+                    RightBadgeLevelProperty.MAP_CODEC
+            );
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Failed to register item model properties", e);
+        }
     }
 }
