@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/netherite_leggings"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/netherite_leggings_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/netherite_leggings_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/netherite_leggings_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/netherite_leggings_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 5
+      },
+      "model": "visualizer:item/netherite_leggings_r5"
+    }
+  ]
+}

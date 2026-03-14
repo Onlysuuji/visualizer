@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/bow",
+    "layer1": "visualizer:item/top_left_4"
+  }
+}

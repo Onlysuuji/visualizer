@@ -5,6 +5,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -45,6 +46,10 @@ public final class EnchantmentBadgeUtil {
 
     public static boolean isSupportedBook(ItemStack stack) {
         return stack.is(Items.ENCHANTED_BOOK);
+    }
+
+    public static boolean isSupportedArmor(ItemStack stack) {
+        return stack.getItem() instanceof ArmorItem;
     }
 
     public static int getLeftBadgeLevel(ItemStack stack, @Nullable ClientLevel level) {
@@ -90,9 +95,12 @@ public final class EnchantmentBadgeUtil {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FLAME)), 0, 1);
         }
 
-        // 本では右下は使わない
         if (isSupportedBook(stack)) {
-            return 0;
+            return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.PROTECTION)), 0, 5);
+        }
+
+        if (isSupportedArmor(stack)) {
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.UNBREAKING)), 0, 5);
         }
 
         return 0;
@@ -103,6 +111,14 @@ public final class EnchantmentBadgeUtil {
         if (actual == null) return 0;
 
         var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+
+        if (isSupportedSword(stack)) {
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.KNOCKBACK)), 0, 5);
+        }
+
+        if (isSupportedBow(stack)) {
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.PUNCH)), 0, 5);
+        }
 
         if (isSupportedBook(stack)) {
             return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.EFFICIENCY)), 0, 5);

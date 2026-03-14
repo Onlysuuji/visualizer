@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/enchanted_book",
+    "layer1": "visualizer:item/top_left_4",
+    "layer2": "visualizer:item/top_right_1",
+    "layer3": "visualizer:item/right_3"
+  }
+}

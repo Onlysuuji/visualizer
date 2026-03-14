@@ -129,6 +129,38 @@ public class Visualizer {
 
                 registerBadgeProperties(Items.BOW);
                 registerBadgeProperties(Items.ENCHANTED_BOOK);
+
+                registerBadgeProperties(Items.LEATHER_HELMET);
+                registerBadgeProperties(Items.LEATHER_CHESTPLATE);
+                registerBadgeProperties(Items.LEATHER_LEGGINGS);
+                registerBadgeProperties(Items.LEATHER_BOOTS);
+
+                registerBadgeProperties(Items.CHAINMAIL_HELMET);
+                registerBadgeProperties(Items.CHAINMAIL_CHESTPLATE);
+                registerBadgeProperties(Items.CHAINMAIL_LEGGINGS);
+                registerBadgeProperties(Items.CHAINMAIL_BOOTS);
+
+                registerBadgeProperties(Items.IRON_HELMET);
+                registerBadgeProperties(Items.IRON_CHESTPLATE);
+                registerBadgeProperties(Items.IRON_LEGGINGS);
+                registerBadgeProperties(Items.IRON_BOOTS);
+
+                registerBadgeProperties(Items.GOLDEN_HELMET);
+                registerBadgeProperties(Items.GOLDEN_CHESTPLATE);
+                registerBadgeProperties(Items.GOLDEN_LEGGINGS);
+                registerBadgeProperties(Items.GOLDEN_BOOTS);
+
+                registerBadgeProperties(Items.DIAMOND_HELMET);
+                registerBadgeProperties(Items.DIAMOND_CHESTPLATE);
+                registerBadgeProperties(Items.DIAMOND_LEGGINGS);
+                registerBadgeProperties(Items.DIAMOND_BOOTS);
+
+                registerBadgeProperties(Items.NETHERITE_HELMET);
+                registerBadgeProperties(Items.NETHERITE_CHESTPLATE);
+                registerBadgeProperties(Items.NETHERITE_LEGGINGS);
+                registerBadgeProperties(Items.NETHERITE_BOOTS);
+
+                registerBadgeProperties(Items.TURTLE_HELMET);
             });
         }
 
