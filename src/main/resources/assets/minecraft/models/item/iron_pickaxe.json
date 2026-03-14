@@ -1,0 +1,161 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minecraft:item/iron_pickaxe"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_l1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_l2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_l3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4
+      },
+      "model": "visualizer:item/iron_pickaxe_l4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5
+      },
+      "model": "visualizer:item/iron_pickaxe_l5"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_l1_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_l1_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_l1_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_l2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_l2_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_l2_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_l3_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_l3_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_l3_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_l4_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_l4_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_l4_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/iron_pickaxe_l5_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/iron_pickaxe_l5_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/iron_pickaxe_l5_r3"
+    }
+  ]
+}

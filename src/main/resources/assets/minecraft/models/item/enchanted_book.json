@@ -1,0 +1,660 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/enchanted_book"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_l1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_l2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_l3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_l4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5
+      },
+      "model": "visualizer:item/enchanted_book_l5"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 5
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l5"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 5
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l5"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_l1_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_l1_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_l1_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_l1_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_l2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_l2_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_l2_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_l2_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_l3_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_l3_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_l3_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_l3_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_l4_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_l4_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_l4_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_l4_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_l5_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_l5_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_l5_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_l5_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l1_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l1_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l1_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l1_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l2_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l2_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l2_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l3_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l3_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l3_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l3_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l4_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l4_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l4_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l4_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l5_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l5_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l5_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 1,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl1_l5_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l1_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l1_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l1_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l1_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l2_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l2_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l2_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l3_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l3_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l3_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l3_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l4_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l4_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l4_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l4_r4"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l5_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l5_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l5_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:top_left_badge_level": 2,
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 4
+      },
+      "model": "visualizer:item/enchanted_book_tl2_l5_r4"
+    }
+  ]
+}

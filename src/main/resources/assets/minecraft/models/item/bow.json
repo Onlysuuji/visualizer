@@ -1,0 +1,79 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/bow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1
+      },
+      "model": "visualizer:item/bow_l1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2
+      },
+      "model": "visualizer:item/bow_l2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3
+      },
+      "model": "visualizer:item/bow_l3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4
+      },
+      "model": "visualizer:item/bow_l4"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5
+      },
+      "model": "visualizer:item/bow_l5"
+    },
+    {
+      "predicate": {
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/bow_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/bow_l1_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/bow_l2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/bow_l3_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/bow_l4_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 5,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/bow_l5_r1"
+    }
+  ]
+}
