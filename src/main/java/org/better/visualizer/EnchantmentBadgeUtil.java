@@ -1,15 +1,16 @@
-// src/main/java/org/better/visualizer/EnchantmentBadgeUtil.java
 package org.better.visualizer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -44,8 +45,6 @@ public final class EnchantmentBadgeUtil {
 
     public static boolean isSupportedBook(ItemStack stack) {
         return stack.is(Items.ENCHANTED_BOOK);
-        // 普通の本も対象にしたいなら:
-        // return stack.is(Items.ENCHANTED_BOOK) || stack.is(Items.BOOK);
     }
 
     public static int getLeftBadgeLevel(ItemStack stack, @Nullable ClientLevel level) {
@@ -55,19 +54,19 @@ public final class EnchantmentBadgeUtil {
         var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 
         if (isSupportedSword(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.SHARPNESS)), 0, 5);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.SHARPNESS)), 0, 5);
         }
 
         if (isSupportedTool(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.EFFICIENCY)), 0, 5);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.EFFICIENCY)), 0, 5);
         }
 
         if (isSupportedBow(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.POWER)), 0, 5);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.POWER)), 0, 5);
         }
 
         if (isSupportedBook(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.SHARPNESS)), 0, 5);
+            return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.SHARPNESS)), 0, 5);
         }
 
         return 0;
@@ -80,19 +79,20 @@ public final class EnchantmentBadgeUtil {
         var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 
         if (isSupportedSword(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.FIRE_ASPECT)), 0, 2);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FIRE_ASPECT)), 0, 2);
         }
 
         if (isSupportedTool(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.FORTUNE)), 0, 3);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FORTUNE)), 0, 3);
         }
 
         if (isSupportedBow(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.FLAME)), 0, 1);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FLAME)), 0, 1);
         }
 
+        // 本では右下は使わない
         if (isSupportedBook(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.PROTECTION)), 0, 4);
+            return 0;
         }
 
         return 0;
@@ -105,22 +105,43 @@ public final class EnchantmentBadgeUtil {
         var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 
         if (isSupportedBook(stack)) {
-            return clamp(getEnchantLevel(stack, lookup.getOrThrow(Enchantments.FIRE_ASPECT)), 0, 2);
+            return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.EFFICIENCY)), 0, 5);
         }
 
         return 0;
     }
 
-    private static int getEnchantLevel(ItemStack stack, Holder<Enchantment> target) {
+    public static int getTopRightBadgeLevel(ItemStack stack, @Nullable ClientLevel level) {
+        ClientLevel actual = resolveLevel(level);
+        if (actual == null) return 0;
+
+        var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+
+        if (isSupportedBook(stack)) {
+            return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.FIRE_ASPECT)), 0, 2);
+        }
+
+        return 0;
+    }
+
+    private static int getNormalEnchantLevel(ItemStack stack, Holder<Enchantment> target) {
         AtomicInteger result = new AtomicInteger(0);
 
-        EnchantmentHelper.runIterationOnItem(stack, (enchantmentHolder, enchantLevel) -> {
-            if (enchantmentHolder.equals(target)) {
-                result.set(Math.max(result.get(), enchantLevel));
+        EnchantmentHelper.runIterationOnItem(stack, (holder, level) -> {
+            if (holder.equals(target)) {
+                result.set(Math.max(result.get(), level));
             }
         });
 
         return result.get();
+    }
+
+    private static int getStoredBookEnchantLevel(ItemStack stack, Holder<Enchantment> target) {
+        ItemEnchantments stored = stack.getOrDefault(
+                DataComponents.STORED_ENCHANTMENTS,
+                ItemEnchantments.EMPTY
+        );
+        return stored.getLevel(target);
     }
 
     private static int clamp(int value, int min, int max) {

@@ -150,6 +150,12 @@ public class Visualizer {
                     ResourceLocation.fromNamespaceAndPath(MODID, "top_left_badge_level"),
                     (stack, level, entity, seed) -> EnchantmentBadgeUtil.getTopLeftBadgeLevel(stack, level)
             );
+
+            ItemProperties.register(
+                    item,
+                    ResourceLocation.fromNamespaceAndPath(MODID, "top_right_badge_level"),
+                    (stack, level, entity, seed) -> EnchantmentBadgeUtil.getTopRightBadgeLevel(stack, level)
+            );
         }
     }
 }
