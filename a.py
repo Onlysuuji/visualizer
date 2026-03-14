@@ -34,7 +34,6 @@ ITEMS = [
     {"name": "diamond_pickaxe", "parent": "minecraft:item/handheld", "slots": {"left": 5, "right": 3}},
     {"name": "iron_pickaxe", "parent": "minecraft:item/handheld", "slots": {"left": 5, "right": 3}},
     {"name": "golden_pickaxe", "parent": "minecraft:item/handheld", "slots": {"left": 5, "right": 3}},
-
     {"name": "diamond_shovel", "parent": "minecraft:item/handheld", "slots": {"left": 5, "right": 3}},
     {"name": "iron_shovel", "parent": "minecraft:item/handheld", "slots": {"left": 5, "right": 3}},
     {"name": "golden_shovel", "parent": "minecraft:item/handheld", "slots": {"left": 5, "right": 3}},
@@ -43,47 +42,48 @@ ITEMS = [
 
     {"name": "enchanted_book", "parent": "minecraft:item/generated", "slots": {"left": 5, "right": 5, "top_left": 5, "top_right": 2}},
 
-    {"name": "leather_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "leather_chestplate", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "leather_leggings", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "leather_boots", "parent": "minecraft:item/generated", "slots": {"right": 5}},
+    {"name": "iron_helmet", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
+    {"name": "iron_chestplate", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
+    {"name": "iron_leggings", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
+    {"name": "iron_boots", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
 
-    {"name": "chainmail_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "chainmail_chestplate", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "chainmail_leggings", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "chainmail_boots", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-
-    {"name": "iron_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "iron_chestplate", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "iron_leggings", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "iron_boots", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-
-    {"name": "golden_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "golden_chestplate", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "golden_leggings", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "golden_boots", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-
-    {"name": "diamond_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "diamond_chestplate", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "diamond_leggings", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "diamond_boots", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-
-    {"name": "netherite_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "netherite_chestplate", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "netherite_leggings", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-    {"name": "netherite_boots", "parent": "minecraft:item/generated", "slots": {"right": 5}},
-
-    {"name": "turtle_helmet", "parent": "minecraft:item/generated", "slots": {"right": 5}},
+    {"name": "diamond_helmet", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
+    {"name": "diamond_chestplate", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
+    {"name": "diamond_leggings", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
+    {"name": "diamond_boots", "parent": "minecraft:item/generated", "slots": {"left": 4, "right": 3}},
 ]
+
 
 def write_json(path: Path, data: dict):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
-def make_model(parent: str, item_name: str, slot_levels: dict):
-    textures = {"layer0": f"minecraft:item/{item_name}"}
 
+def get_book_base_key(slot_levels: dict):
+    # 優先順位: fireaspect > protection > sharpness > efficiency
+    if slot_levels.get("top_right", 0) >= 1:
+        return "fireaspect"
+    if slot_levels.get("right", 0) >= 1:
+        return "protection"
+    if slot_levels.get("left", 0) >= 1:
+        return "sharpness"
+    if slot_levels.get("top_left", 0) >= 1:
+        return "efficiency"
+    return None
+
+
+def get_base_texture(item_name: str, slot_levels: dict):
+    if item_name == "enchanted_book":
+        base_key = get_book_base_key(slot_levels)
+        if base_key is not None:
+            return f"{MODID}:item/enchanted_book_{base_key}"
+    return f"minecraft:item/{item_name}"
+
+
+def make_model(parent: str, item_name: str, slot_levels: dict):
+    textures = {"layer0": get_base_texture(item_name, slot_levels)}
     layer_index = 1
+
     for slot in SLOT_ORDER:
         if slot in slot_levels:
             level = slot_levels[slot]
@@ -95,8 +95,15 @@ def make_model(parent: str, item_name: str, slot_levels: dict):
         "textures": textures
     }
 
+
 def make_model_name(item_name: str, slot_levels: dict):
     parts = [item_name]
+
+    if item_name == "enchanted_book":
+        base_key = get_book_base_key(slot_levels)
+        if base_key is not None:
+            parts.append(base_key)
+
     if "top_left" in slot_levels:
         parts.append(f"tl{slot_levels['top_left']}")
     if "top_right" in slot_levels:
@@ -105,11 +112,12 @@ def make_model_name(item_name: str, slot_levels: dict):
         parts.append(f"l{slot_levels['left']}")
     if "right" in slot_levels:
         parts.append(f"r{slot_levels['right']}")
+
     return "_".join(parts)
+
 
 def generate_for_item(item_name: str, parent: str, slots: dict):
     overrides = []
-
     available_slots = [slot for slot in SLOT_ORDER if slot in slots]
 
     for size in range(1, len(available_slots) + 1):
@@ -144,6 +152,7 @@ def generate_for_item(item_name: str, parent: str, slots: dict):
 
     write_json(MINECRAFT_MODEL_DIR / f"{item_name}.json", root_model)
 
+
 def main():
     MINECRAFT_MODEL_DIR.mkdir(parents=True, exist_ok=True)
     MOD_MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -152,6 +161,7 @@ def main():
         generate_for_item(item["name"], item["parent"], item["slots"])
 
     print("生成完了")
+
 
 if __name__ == "__main__":
     main()

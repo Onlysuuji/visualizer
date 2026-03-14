@@ -49,60 +49,59 @@ public final class EnchantmentBadgeUtil {
     }
 
     public static boolean isSupportedArmor(ItemStack stack) {
-        return stack.getItem() instanceof ArmorItem;
+        return stack.is(Items.IRON_HELMET)
+                || stack.is(Items.IRON_CHESTPLATE)
+                || stack.is(Items.IRON_LEGGINGS)
+                || stack.is(Items.IRON_BOOTS)
+                || stack.is(Items.DIAMOND_HELMET)
+                || stack.is(Items.DIAMOND_CHESTPLATE)
+                || stack.is(Items.DIAMOND_LEGGINGS)
+                || stack.is(Items.DIAMOND_BOOTS);
     }
 
     public static int getLeftBadgeLevel(ItemStack stack, @Nullable ClientLevel level) {
         ClientLevel actual = resolveLevel(level);
         if (actual == null) return 0;
-
         var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 
         if (isSupportedSword(stack)) {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.SHARPNESS)), 0, 5);
         }
-
         if (isSupportedTool(stack)) {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.EFFICIENCY)), 0, 5);
         }
-
         if (isSupportedBow(stack)) {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.POWER)), 0, 5);
         }
-
         if (isSupportedBook(stack)) {
             return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.SHARPNESS)), 0, 5);
         }
-
+        if (isSupportedArmor(stack)) {
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.PROTECTION)), 0, 4);
+        }
         return 0;
     }
 
     public static int getRightBadgeLevel(ItemStack stack, @Nullable ClientLevel level) {
         ClientLevel actual = resolveLevel(level);
         if (actual == null) return 0;
-
         var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
 
         if (isSupportedSword(stack)) {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FIRE_ASPECT)), 0, 2);
         }
-
         if (isSupportedTool(stack)) {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FORTUNE)), 0, 3);
         }
-
         if (isSupportedBow(stack)) {
             return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.FLAME)), 0, 1);
         }
-
         if (isSupportedBook(stack)) {
             return clamp(getStoredBookEnchantLevel(stack, lookup.getOrThrow(Enchantments.PROTECTION)), 0, 5);
         }
-
         if (isSupportedArmor(stack)) {
-            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.UNBREAKING)), 0, 5);
+            return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.UNBREAKING)), 0, 3);
         }
-
         return 0;
     }
 
@@ -138,6 +137,14 @@ public final class EnchantmentBadgeUtil {
         }
 
         return 0;
+    }
+
+    public static int getProtectionArmorLevel(ItemStack stack, @Nullable ClientLevel level) {
+        ClientLevel actual = resolveLevel(level);
+        if (actual == null) return 0;
+
+        var lookup = actual.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+        return clamp(getNormalEnchantLevel(stack, lookup.getOrThrow(Enchantments.PROTECTION)), 0, 4);
     }
 
     private static int getNormalEnchantLevel(ItemStack stack, Holder<Enchantment> target) {

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "visualizer:item/enchanted_book_fireaspect",
+    "layer1": "visualizer:item/top_right_2",
+    "layer2": "visualizer:item/left_4",
+    "layer3": "visualizer:item/right_2"
+  }
+}

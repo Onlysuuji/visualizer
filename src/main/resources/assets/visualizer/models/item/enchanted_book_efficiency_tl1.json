@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "visualizer:item/enchanted_book_efficiency",
+    "layer1": "visualizer:item/top_left_1"
+  }
+}

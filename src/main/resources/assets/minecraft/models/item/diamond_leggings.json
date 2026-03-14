@@ -6,6 +6,30 @@
   "overrides": [
     {
       "predicate": {
+        "visualizer:left_badge_level": 1
+      },
+      "model": "visualizer:item/diamond_leggings_l1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2
+      },
+      "model": "visualizer:item/diamond_leggings_l2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3
+      },
+      "model": "visualizer:item/diamond_leggings_l3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4
+      },
+      "model": "visualizer:item/diamond_leggings_l4"
+    },
+    {
+      "predicate": {
         "visualizer:right_badge_level": 1
       },
       "model": "visualizer:item/diamond_leggings_r1"
@@ -24,15 +48,87 @@
     },
     {
       "predicate": {
-        "visualizer:right_badge_level": 4
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 1
       },
-      "model": "visualizer:item/diamond_leggings_r4"
+      "model": "visualizer:item/diamond_leggings_l1_r1"
     },
     {
       "predicate": {
-        "visualizer:right_badge_level": 5
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 2
       },
-      "model": "visualizer:item/diamond_leggings_r5"
+      "model": "visualizer:item/diamond_leggings_l1_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 1,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/diamond_leggings_l1_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/diamond_leggings_l2_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/diamond_leggings_l2_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 2,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/diamond_leggings_l2_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/diamond_leggings_l3_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/diamond_leggings_l3_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 3,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/diamond_leggings_l3_r3"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 1
+      },
+      "model": "visualizer:item/diamond_leggings_l4_r1"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 2
+      },
+      "model": "visualizer:item/diamond_leggings_l4_r2"
+    },
+    {
+      "predicate": {
+        "visualizer:left_badge_level": 4,
+        "visualizer:right_badge_level": 3
+      },
+      "model": "visualizer:item/diamond_leggings_l4_r3"
     }
   ]
 }
