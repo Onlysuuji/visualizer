@@ -1,0 +1,51 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VSCode
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Java
+*.class
+hs_err_pid*
+replay_pid*
+
+# Logs
+logs/
+*.log
+
+# Runtime / local files
+run/
+runs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NeoForge / Forge generated files
+client-extra.jar
+server-extra.jar
+
+# Local config overrides
+*.launch
